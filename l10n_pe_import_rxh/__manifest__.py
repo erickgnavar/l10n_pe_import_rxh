@@ -1,6 +1,6 @@
 {
     "name": "Import RxH XML file",
-    "author": "Erick Navarro <erick@navarro.io>",
+    "author": "Erick Navarro",
     "category": "Localization",
     "license": "LGPL-3",
     "version": "0.1",
