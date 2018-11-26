@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="import_rxh_view_form" model="ir.ui.view">
+            <field name="name">import.rxh.form</field>
+            <field name="model">import.rxh</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="xml_file"/>
+                                <field name="account_id" options="{'no_create': True, 'no_edit': True, 'no_open': True}"/>
+                            </group>
+                            <group>
+                                <field name="create_supplier"/>
+                            </group>
+                        </group>
+                        <footer>
+                            <button class="oe_highlight" string="Process file and create invoice" name="action_process_file" type="object"/>
+                        </footer>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="import_rxh_action" model="ir.actions.act_window">
+            <field name="name">Import RxH</field>
+            <field name="res_model">import.rxh</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem
+                id="menu_import_rxh" name="Import RxH file"
+                parent="account.menu_finance_payables_documents" action="import_rxh_action"/>
+    </data>
+</odoo>
