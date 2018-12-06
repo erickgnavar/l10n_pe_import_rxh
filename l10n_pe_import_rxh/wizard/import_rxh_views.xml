@@ -34,6 +34,6 @@
 
         <menuitem
                 id="menu_import_rxh" name="Import RxH file"
-                parent="account.menu_finance_payables_documents" action="import_rxh_action"/>
+                parent="account.menu_finance_payables" action="import_rxh_action"/>
     </data>
 </odoo>
