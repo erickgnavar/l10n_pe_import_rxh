@@ -11,6 +11,7 @@
                             <group>
                                 <field name="xml_file"/>
                                 <field name="account_id" options="{'no_create': True, 'no_edit': True, 'no_open': True}"/>
+                                <field name="tax_id" options="{'no_create': True, 'no_edit': True, 'no_open': True}"/>
                             </group>
                             <group>
                                 <field name="create_supplier"/>
