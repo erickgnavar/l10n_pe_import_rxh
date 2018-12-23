@@ -30,6 +30,12 @@ class ImportRxH(models.TransientModel):
         help_text="Used for invoice line account",
     )
 
+    tax_id = fields.Many2one(
+        "account.tax",
+        "Tax",
+        help_text="This tax will be used for the invoice line created",
+    )
+
     @api.multi
     def action_process_file(self):
         self.ensure_one()
@@ -65,6 +71,7 @@ class ImportRxH(models.TransientModel):
                     "quantity": 1,
                     "price_unit": data["legal_amount"]["payable_amount"],
                     "account_id": self.account_id.id,
+                    "invoice_line_tax_ids": [[6, False, [self.tax_id.id]]] if self.tax_id else []
                 }),
             ],
         }
